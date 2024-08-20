@@ -1,0 +1,24 @@
+{# templates/registration/register.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div style="background-image: url('/path/to/your/image.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; width: 400px;">
+            <h1 style="text-align: center;">Registration</h1>
+
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email, { 'attr': {'class': 'form-control'} }) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password',
+                    'attr': {'class': 'form-control'}
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+                <button type="submit" class="btn btn-primary">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}
